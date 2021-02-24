@@ -1,0 +1,73 @@
+- let i = 0;
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./pdf.styles.css")
+    title PDF
+    style.
+      p{
+        margin:0;
+        padding:0;
+        margin-left: 15px;
+        color: #242424;
+      }
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 0px;
+      }
+      th {
+        background-color: #0000a0;
+        color: white;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      td {
+        margin-top: 10px;
+        border: 1px solid #333;
+        margin-top: 5px;
+      }
+      table {
+        width: 100%;
+        text-align: center;
+      }
+      .user {
+        margin-left: 10px;
+        margin-bottom: 5px;
+      }
+      .rol {
+        margin-left: 14px;
+        margin-bottom: 10px;
+      }
+      .email_content, .direction_content {
+        display: flex;
+      }
+      .titleRol, .titleUser {
+        font-weight: bold;
+      }
+      .datos {
+        font-size: 15px;
+      }
+  body
+    each student of estudiante
+      div
+        h1= student.name
+        div
+          .email_content
+            p.titleUser User:
+            p.user= student.user
+          .direction_content
+            p.titleRol Rol:
+            p.rol= student.rol
+    table
+      tr
+        th No.
+        th Nombre Materia
+      each courses  of cursos
+        tr.datos
+          td= (i=i + 1)
+          td= courses.name
