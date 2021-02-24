@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "28c851c1-8b53-4b84-ae62-46cade197219",
+		"name": "Control de Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Profesor",
+			"item": [
+				{
+					"name": "Listar Cursos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NjE2NWIxMjRkODM5ZTQ3ZDAzYzEiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjI4Iiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZDJhOTMxMTMwZjc4MTE5MmQ5IiwiNjAzNTQ0ZGFhOTMxMTMwZjc4MTE5MmRhIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDExMTcxNCwiZXhwIjoxNjE0ODAyOTE0fQ.jQY60foYxeAz56xH9-MYO14Iwq-PIStv7FzjvKUDkyw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cursos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cursos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NDQ1ZWMzOTljNjQ5NGM4N2ZlN2QiLCJuYW1lIjoiTUFFU1RSTyIsInVzZXIiOiJNQUVTVFJPIiwicm9sIjoiUk9MX01BRVNUUk8iLCJjb3Vyc2VzIjpbXSwiaWF0IjoxNjE0MTAzNzM0LCJleHAiOjE2MTQ3OTQ5MzR9.iALSK3Tk-AvMfkICGxQgeFpPZ8y3pS1YVYi73GuFrwU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Practicas Supervisadas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cursos/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Curso",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NDQ1ZWMzOTljNjQ5NGM4N2ZlN2QiLCJuYW1lIjoiTUFFU1RSTyIsInVzZXIiOiJNQUVTVFJPIiwicm9sIjoiUk9MX01BRVNUUk8iLCJjb3Vyc2VzIjpbXSwiaWF0IjoxNjE0MTAzNzM0LCJleHAiOjE2MTQ3OTQ5MzR9.iALSK3Tk-AvMfkICGxQgeFpPZ8y3pS1YVYi73GuFrwU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Taller III\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cursos/update/603544d2a931130f781192d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								"update",
+								"603544d2a931130f781192d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Curso",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM0MmMxNTE2ZTg4ZjNkMTQwMjMzNDciLCJuYW1lIjoiTUFFU1RSTyIsInVzZXIiOiJNQUVTVFJPIiwicm9sIjoiUk9MX01BRVNUUk8iLCJjb3Vyc2VzIjpbIjYwMzQyZWVhZGNjM2VjMDY1MGIyYzY3OSIsIjYwMzQzMjU5YzRlNzg3NGNhODI1NDY4MCJdLCJpYXQiOjE2MTQwMzM1MjQsImV4cCI6MTYxNDgxMTEyNH0.IiauGTFeYLlequdULTqoUMLtallvIPdXfE34ONSGPBM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cursos/delete/603544daa931130f781192da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cursos",
+								"delete",
+								"603544daa931130f781192da"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alumnos",
+			"item": [
+				{
+					"name": "Crear Alumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alejandro\",\r\n    \"user\": \"mtecun-2016228\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/alumnos/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Curso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NjQ4N2Y4MGFlODA1MjgyYzliMGMiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjI4Iiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZDJhOTMxMTMwZjc4MTE5MmQ5IiwiNjAzNTQ0ZGFhOTMxMTMwZjc4MTE5MmRhIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDExMjM5NiwiZXhwIjoxNjE0ODAzNTk2fQ.IVLnXKJIrOPO5l-tpkZmbbxkgf2D9vP7SyarI6qAlVs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "curso",
+									"value": "603544d2a931130f781192d9",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "curso",
+									"value": "603544daa931130f781192da",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "curso",
+									"value": "603544e0a931130f781192db",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "curso",
+									"value": "603548a17f40fb3cd0f5d766",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/alumnos/cursos/agregar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"cursos",
+								"agregar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cursos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NjQ4N2Y4MGFlODA1MjgyYzliMGMiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjI4Iiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZDJhOTMxMTMwZjc4MTE5MmQ5IiwiNjAzNTQ0ZGFhOTMxMTMwZjc4MTE5MmRhIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDExNDEzMywiZXhwIjoxNjE0ODA1MzMzfQ.sYijvVR6hJbXGWHUe7b2lXCaRmbsnJkwqv2DqwDJjQM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/alumnos/cursos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificarme",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NDhlM2JlOTIyMDIyNTAzMWMzMGIiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjIyIiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZDJhOTMxMTMwZjc4MTE5MmQ5IiwiNjAzNTQ0ZGFhOTMxMTMwZjc4MTE5MmRhIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDEwNTY0MSwiZXhwIjoxNjE0Nzk2ODQxfQ.byt5NJrt-sVwUPUqFKn6g_o1JCnSxT4uf3ey2dR0OSk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alejandro",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/alumnos/updateMe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"updateMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminarme",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NDhlM2JlOTIyMDIyNTAzMWMzMGIiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjIyIiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZDJhOTMxMTMwZjc4MTE5MmQ5IiwiNjAzNTQ0ZGFhOTMxMTMwZjc4MTE5MmRhIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDEwNTY0MSwiZXhwIjoxNjE0Nzk2ODQxfQ.byt5NJrt-sVwUPUqFKn6g_o1JCnSxT4uf3ey2dR0OSk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/alumnos/deleteMe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"deleteMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PDF",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDM1NjQ4N2Y4MGFlODA1MjgyYzliMGMiLCJuYW1lIjoiQWxlamFuZHJvIiwidXNlciI6Im10ZWN1bi0yMDE2MjI4Iiwicm9sIjoiUk9MX0FMVU1OTyIsImNvdXJzZXMiOlsiNjAzNTQ0ZThhOTMxMTMwZjc4MTE5MmRjIiwiNjAzNTQ0ZTBhOTMxMTMwZjc4MTE5MmRiIl0sImlhdCI6MTYxNDExNDgxNCwiZXhwIjoxNjE0ODA2MDE0fQ.qOyRsp5K8YWXWA8ZerS5FjbP1rzYBhJHCtSYieZV7V0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/alumnos/pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"alumnos",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"mtecun-2016228\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
