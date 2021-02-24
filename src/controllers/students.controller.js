@@ -2,7 +2,6 @@ const { registrar } = require('../controllers/auth.controller');
 const { findByID, findUpdate, findUser, findAndUpdate, removeUser, findUserOne } = require('../store/students.store');
 const RESPONSE = require('../utils/response');
 const { pdf } = require('../utils/pdf/coding-pdf/pdf.generator');
-const { findOne } = require('../model/user.model');
 
 function agregar(req, res) {
   registrar(req, res, 'ROL_ALUMNO');
@@ -17,16 +16,23 @@ function agregarCursos(req, res) {
 
   findByID(req.user.sub)
     .then((usuarioEncontrada) => {
-      if (usuarioEncontrada.courses.length > 2) {
-        return RESPONSE.error(req, res, 'Ya no puedes asignar más cursos.', 404);
-      } else if (usuarioEncontrada.courses.find((element) => element == curso)) {
-        return RESPONSE.error(req, res, 'Este curso ya existe.', 500);
+      if (usuarioEncontrada) {
+        if (usuarioEncontrada.courses.length > 2) {
+          return RESPONSE.error(req, res, 'Ya no puedes asignar más cursos.', 404);
+        } else if (usuarioEncontrada.courses.find((element) => element == curso)) {
+          return RESPONSE.error(req, res, 'Este curso ya existe.', 500);
+        } else {
+          findUpdate(req.user.sub, curso)
+            .then((cursos) => {
+              !cursos ? RESPONSE.error(req, res, 'No se puede encontrar el curso.', 500) : RESPONSE.success(req, res, cursos, 200);
+            })
+            .catch((err) => {
+              console.log(err);
+              return RESPONSE.error(req, res, 'Error interno', 500);
+            });
+        }
       } else {
-        findUpdate(req.user.sub, curso).then((cursos) => {
-          console.log(cursos);
-          console.log(req.user.sub);
-          !cursos ? RESPONSE.error(req, res, cursos, 500) : RESPONSE.success(req, res, cursos, 200);
-        });
+        return RESPONSE.error(req, res, 'El usuario no se a podido encontrar.', 500);
       }
     })
     .catch((err) => {
